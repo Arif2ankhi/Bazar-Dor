@@ -3,12 +3,12 @@ import React from 'react';
 const ProductCard = ({ product }) => {
   const { nameBn, unit, image, today, change } = product;
 
-  // Bengali number formatter helper
+
   const toBengaliNumber = (num) => {
     return num.toLocaleString('bn-BD');
   };
 
-  // Badge styling based on price direction
+  
   const isUp = change?.dir === 'up';
   const isDown = change?.dir === 'down';
 
