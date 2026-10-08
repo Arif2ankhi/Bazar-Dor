@@ -1,10 +1,18 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const Banner = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
     dateStyle: "full",
   });
+
+//    const handleScrollToAllProducts = () => {
+//     const section = document.getElementById("all-products");
+//     if (section) {
+//       section.scrollIntoView({ behavior: "smooth" });
+//     }
+//   };
 
   return (
     <section className="container mx-auto px-4 py-6 md:px-8">
@@ -29,11 +37,16 @@ const Banner = () => {
             </p>
 
             {/* Action Button */}
+
+            {/* <Link href="/all"> */}
             <div className="mt-6">
-              <button className="rounded-xl bg-[#0A8754] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700">
+              <button 
+            //  onClick={handleScrollToAllProducts}
+              className="rounded-xl bg-[#0A8754] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700">
                 সব পণ্য দেখুন
               </button>
             </div>
+              {/* </Link> */}
           </div>
 
           {/* Right Image Container */}
