@@ -35,7 +35,7 @@ const ProductCard = ({ product }) => {
 
       {/* Right side: Price + Percentage Change */}
       <div className="text-right">
-        <span className="block text-xs text-emerald-700 font-bold mr-20">আজকের দাম </span>
+        <span className="block text-xs text-emerald-700 font-bold mr-18">আজকের দাম </span>
         <div className="mt-1 flex items-center justify-end gap-2">
           <span className="text-lg font-bold text-slate-900">
             {toBengaliNumber(today)} টাকা
