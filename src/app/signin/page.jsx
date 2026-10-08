@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 
@@ -99,12 +100,12 @@ const SignInPage = () => {
       </div>
 
       {/* Back to Home */}
-      <a
+      <Link
         href="/"
         className="mt-5 text-[11px] text-gray-400 hover:text-[#079447] transition"
       >
         ← হোম পেজে ফিরে যান
-      </a>
+      </Link>
     </div>
   );
 };

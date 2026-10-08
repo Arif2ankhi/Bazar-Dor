@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard";
 const PriceUp = ({ products = [] }) => {
   const priceUpProducts = products
     .filter((p) => p.change?.dir === "up")
+    .sort((a, b) => (b.change?.pct || 0) - (a.change?.pct || 0))
     .slice(0, 6);
 
   if (priceUpProducts.length === 0) return null;
@@ -12,7 +13,7 @@ const PriceUp = ({ products = [] }) => {
     <section className="mb-8">
       <div className="mb-4 flex items-center gap-2">
         <span className="text-red-600">▲</span>
-        <h2 className="text-xl font-bold text-slate-900">আজ দাম বেড়েছে</h2>
+        <h2 className="text-xl font-bold text-slate-900">আজ দাম বেড়েছে</h2>
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

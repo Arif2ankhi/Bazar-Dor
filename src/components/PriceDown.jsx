@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard";
 const PriceDown = ({ products = [] }) => {
   const priceDownProducts = products
     .filter((p) => p.change?.dir === "down")
+    .sort((a, b) => Math.abs(b.change?.pct || 0) - Math.abs(a.change?.pct || 0))
     .slice(0, 6);
 
   if (priceDownProducts.length === 0) return null;
