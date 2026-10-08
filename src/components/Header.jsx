@@ -8,7 +8,7 @@ const Header = () => {
   });
 
   return (
-    <header className="container mx-auto bg-blue-100 w-full py-2 px-4 sm:px-6 ">
+    <header className=" bg-slate-100 w-full py-2 px-4 sm:px-6 ">
       <div className="max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
         {/* Logo and App Title */}
         <div className="flex items-center gap-2 sm:gap-3">
