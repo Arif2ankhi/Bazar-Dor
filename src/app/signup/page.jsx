@@ -1,29 +1,156 @@
-import React from 'react';
+import React from "react";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 const SignUpPage = () => {
-    return (
-        <div className='flex flex-col items-center justify centre mt-5'>
-            <h2 className='tewxt-2xl font-bold text-red-700'>সাইন আপ</h2>
-           <form>
-    <fieldset className="fieldset bg-base-200 rounded-box  w-md ">
+  return (
+    <div className="min-h-screen bg-[#F5FAF7] flex flex-col items-center justify-center px-4 py-8">
 
-  <label className="label">নাম  </label>
-  <input name ="name" type="text" className="input w-md" placeholder="Name" />
+      {/* Heading */}
+      <div className="text-center mb-5">
+        <h2 className="text-2xl font-bold text-[#202724]">
+          অ্যাকাউন্ট তৈরি করুন
+        </h2>
 
-  <label className="label">ImageUrl </label>
-  <input name="image"  type="url" className="input w-md" placeholder="Image" />
+        <p className="text-xs text-gray-500 mt-1">
+          বিনা খরচে সাইন আপ করে শুরু করুন
+        </p>
+      </div>
 
-  <label className="label"> ইমেইল</label>
-  <input name= "email" type="email" className="input w-md" placeholder="Email" />
+      {/* Signup Card */}
+      <div className="w-full max-w-[420px] bg-white border border-[#E1E7E3] rounded-xl p-5 shadow-sm">
 
-  <label className="label">পাসওয়ার্ড </label>
-  <input name="password" type="password" className="input w-md" placeholder="Password" />
+        <form className="space-y-3">
 
-  <button className="btn bg-green-600 text-white mt-4">সাইন আপ  করুন </button>
-</fieldset>
-           </form>
+          {/* Name */}
+          <div>
+            <label className="block text-[13px] text-gray-700 mb-1">
+              নাম
+            </label>
+
+            <input
+              name="name"
+              type="text"
+              placeholder="যেমন:ডোনাল্ড ট্রাম্প  "
+              className="w-full h-10 px-3 rounded-md border border-[#DCE3DF] bg-white text-[13px] outline-none placeholder:text-gray-400 focus:border-[#079447] focus:ring-1 focus:ring-[#079447]"
+            />
+          </div>
+
+          {/* Email */}
+          <div>
+            <label className="block text-[13px] text-gray-700 mb-1">
+              ইমেইল
+            </label>
+
+            <input
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              className="w-full h-10 px-3 rounded-md border border-[#DCE3DF] bg-white text-[13px] outline-none placeholder:text-gray-400 focus:border-[#079447] focus:ring-1 focus:ring-[#079447]"
+            />
+          </div>
+
+          {/* Password */}
+          <div>
+            <label className="block text-[13px] text-gray-700 mb-1">
+              পাসওয়ার্ড
+            </label>
+
+            <input
+              name="password"
+              type="password"
+              placeholder="কমপক্ষে ৮ অক্ষর"
+              className="w-full h-10 px-3 rounded-md border border-[#DCE3DF] bg-white text-[13px] outline-none placeholder:text-gray-400 focus:border-[#079447] focus:ring-1 focus:ring-[#079447]"
+            />
+          </div>
+
+          {/* Confirm Password */}
+          <div>
+            <label className="block text-[13px] text-gray-700 mb-1">
+              পাসওয়ার্ড নিশ্চিত করুন
+            </label>
+
+            <input
+              name="confirmPassword"
+              type="password"
+              placeholder="আবার লিখুন"
+              className="w-full h-10 px-3 rounded-md border border-[#DCE3DF] bg-white text-[13px] outline-none placeholder:text-gray-400 focus:border-[#079447] focus:ring-1 focus:ring-[#079447]"
+            />
+          </div>
+
+          {/* Signup Button */}
+          <button
+            type="submit"
+            className="w-full h-10 mt-2 rounded-md bg-[#079447] hover:bg-[#07833F] text-white text-[13px] font-medium shadow-sm transition duration-200"
+          >
+            অ্যাকাউন্ট তৈরি করুন
+          </button>
+        </form>
+
+        {/* Divider */}
+        <div className="flex items-center gap-3 my-4">
+          <div className="h-px bg-[#E1E7E3] flex-1"></div>
+
+          <span className="text-[11px] text-gray-400">
+            অথবা
+          </span>
+
+          <div className="h-px bg-[#E1E7E3] flex-1"></div>
         </div>
-    );
+
+        {/* Social Login */}
+        <div className="grid grid-cols-2 gap-2">
+
+          {/* Google */}
+          <button
+            type="button"
+            className="h-9 px-2 flex items-center justify-center gap-2 border border-[#DCE3DF] rounded-md bg-white hover:bg-gray-50 text-[11px] font-medium text-gray-700 transition"
+          >
+            <FcGoogle className="text-[16px] shrink-0" />
+
+            <span className="whitespace-nowrap">
+              Google দিয়ে চালিয়ে যান
+            </span>
+          </button>
+
+          {/* GitHub */}
+          <button
+            type="button"
+            className="h-9 px-2 flex items-center justify-center gap-2 border border-[#DCE3DF] rounded-md bg-white hover:bg-gray-50 text-[11px] font-medium text-gray-700 transition"
+          >
+            <FaGithub className="text-[16px] text-[#24292F] shrink-0" />
+
+            <span className="whitespace-nowrap">
+              GitHub দিয়ে চালিয়ে যান
+            </span>
+          </button>
+
+        </div>
+
+        {/* Login Link */}
+        <p className="text-center text-[11px] text-gray-500 mt-4">
+          অ্যাকাউন্ট আছে?{" "}
+
+          <a
+            href="/login"
+            className="text-[#079447] font-medium hover:underline"
+          >
+            সাইন ইন করুন
+          </a>
+        </p>
+
+      </div>
+
+      {/* Back to Home */}
+      <a
+        href="/"
+        className="mt-5 text-[11px] text-gray-400 hover:text-[#079447] transition"
+      >
+        ← হোম পেজে ফিরে যান
+      </a>
+
+    </div>
+  );
 };
 
 export default SignUpPage;

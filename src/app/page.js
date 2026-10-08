@@ -7,7 +7,10 @@ import PriceUp from "@/components/PriceUp";
 
 export default async function Home() {
 
-  const res = await fetch('https://api.api-store.workers.dev/api/bazardor/products')
+  // {Original API}
+  // const res = await fetch('https://api.api-store.workers.dev/api/bazardor/products')
+  // {Alternative Api}
+  const res = await fetch('https://api.abcz.workers.dev/api/bazardor/products')
   const data = await res.json()
   const products = data
   

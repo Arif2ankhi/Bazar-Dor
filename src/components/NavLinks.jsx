@@ -2,7 +2,10 @@ import Link from 'next/link';
 import React from 'react';
 
 const NavLinks = async() => {
-    const res = await fetch('https://api.api-store.workers.dev/api/bazardor/categories')
+    // {real API}
+    // const res = await fetch('https://api.api-store.workers.dev/api/bazardor/categories')
+    // {alternative API}
+    const res = await fetch('https://api.abcz.workers.dev/api/bazardor/categories')
     const data = await res.json()
     const navs = data
     // console.log(navs);
