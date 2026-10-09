@@ -4,7 +4,11 @@ const ProductCategory = async ({ params }) => {
 const { categoryId } = await params;
 
 const res = await fetch(
-`https://api.abcz.workers.dev/api/bazardor/products?category=${encodeURIComponent(categoryId)}`
+    // {real api}
+`https://api.api-store.workers.dev/api/bazardor/products?category=${encodeURIComponent(categoryId)}`
+
+// {Alternative API}
+// `https://api.abcz.workers.dev/api/bazardor/products?category=${encodeURIComponent(categoryId)}`
 );
 
 if (!res.ok) {

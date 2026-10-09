@@ -2,8 +2,36 @@ import React from "react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import toast from "react-hot-toast";
+import { authClient } from "@/lib/auth-client";
 
 const SignInPage = () => {
+    const onSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    // const formData = new Formdata(e.target)
+    const user = Object.fromEntries(formData.entries()) 
+
+    console.log(user);
+
+    const { data, error } = await authClient.signIn.email({
+      ...user,
+      callbackURL: "/"
+    });
+
+    if (data) {
+      toast.success("User signed in successfully");
+      console.log(data);
+    }
+    if (error) {
+      toast.error("Invalid email or password");
+      console.log(error);
+    }
+  };
+
+
+
   return (
     <div className="min-h-screen bg-[#F5FAF7] flex flex-col items-center  px-4 py-8">
       {/* Heading */}
@@ -17,7 +45,7 @@ const SignInPage = () => {
 
       {/* Signup Card */}
       <div className="w-full max-w-[420px] bg-white border border-[#E1E7E3] rounded-xl p-5 shadow-sm">
-        <form className="space-y-3">
+        <form onSubmit={onSubmit} className="space-y-3">
           {/* Email */}
           <div>
             <label className="block text-[13px] text-gray-700 mb-1">

@@ -11,8 +11,9 @@ const ProductDetails = async ({ params }) => {
   const { productId } = await params;
 
   const res = await fetch(
-    `https://api.abcz.workers.dev/api/bazardor/products/${productId}`,
-    { next: { revalidate: 60 } }
+    `https://api.api-store.workers.dev/api/bazardor/products/${productId}`,
+    // `https://api.abcz.workers.dev/api/bazardor/products/${productId}`,
+    // { next: { revalidate: 60 } }
   );
 
   if (!res.ok) {

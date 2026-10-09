@@ -4,9 +4,9 @@ import { FcHome } from "react-icons/fc";
 
 const NavLinks = async() => {
     // {real API}
-    // const res = await fetch('https://api.api-store.workers.dev/api/bazardor/categories')
+    const res = await fetch('https://api.api-store.workers.dev/api/bazardor/categories')
     // {alternative API}
-    const res = await fetch('https://api.abcz.workers.dev/api/bazardor/categories')
+    // const res = await fetch('https://api.abcz.workers.dev/api/bazardor/categories')
     const data = await res.json()
     const navs = data
   
