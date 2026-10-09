@@ -1,40 +1,7 @@
-// import ProductCard from '@/components/ProductCard';
-
-// const ProductDetails = async ({ params }) => {
-//   const { productId } = await params;
-
-//   const res = await fetch(
-//     `https://api.abcz.workers.dev/api/bazardor/products/${productId}`
-//   );
-
-//   if (!res.ok) {
-//     throw new Error('Product not found');
-//   }
-
-//   const product = await res.json();
-
-//   return (
-//     <div className="container mx-auto p-4">
-//       <h1 className="mb-4 text-2xl font-bold">
-//         {product.nameBn}
-//       </h1>
-//       <p className='font-bold text-ndigo-600'>{product.categoryNameBn}</p>
-
-//       <ProductCard
-//         key={product.id}
-//         product={product}
-//       />
-//     </div>
-//   );
-// };
-
-// export default ProductDetails;
-
-
 import React from 'react';
 import Link from 'next/link';
 
-// সংখ্যা বাংলায় রূপান্তর করার ফাংশন
+
 const toBn = (num) => {
   if (num === undefined || num === null) return '';
   return Number(num).toLocaleString('bn-BD');
@@ -232,3 +199,4 @@ const ProductDetails = async ({ params }) => {
 };
 
 export default ProductDetails;
+
