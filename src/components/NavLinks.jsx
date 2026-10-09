@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { FcHome } from "react-icons/fc";
 
 const NavLinks = async() => {
     // {real API}
@@ -11,9 +12,8 @@ const NavLinks = async() => {
     // console.log(navs);
     return (
         <div className=' container mx-auto flex gap-6 justify-center'>
-            {/* {
-                navs.map((product, id) => <Link key={slug} href={product.id}>{product.nameBn}</Link>)
-            } */}
+
+          <Link className='flex gap-2' href={"/"}><span><FcHome /></span>হোম</Link>
             {navs.map((product) => (
         <Link  key={product.id} href={`/category/${product.slug}`}>
           <span>{product.icon}</span> {product.nameBn}

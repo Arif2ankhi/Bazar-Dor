@@ -14,7 +14,7 @@ export default async function Home() {
   const data = await res.json()
   const products = data
   
- console.log(products);
+//  console.log(products);
  
 
 

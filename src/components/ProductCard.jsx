@@ -1,9 +1,10 @@
+import Link from 'next/link';
 import React from 'react';
 
 const ProductCard = ({ product }) => {
   const { nameBn, unit, image, today, change } = product;
 
-
+ 
   const toBengaliNumber = (num) => {
     return num.toLocaleString('bn-BD');
   };
@@ -21,6 +22,7 @@ const ProductCard = ({ product }) => {
   const arrow = isUp ? '▲' : isDown ? '▼' : '—';
 
   return (
+    <Link href = {`/product/${product.id}`}>
     <div className="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm transition-shadow hover:shadow-md">
       {/* Left side: Icon + Name */}
       <div className="flex items-center gap-3">
@@ -47,6 +49,7 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 

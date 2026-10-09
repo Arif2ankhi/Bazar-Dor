@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
+        <div className='mt-8'>
             <footer className="footer sm:footer-horizontal bg-cyan-100 text-neutral-content items-center p-4">
-  <aside className="grid-flow-col items-center">
+  <aside className="grid-flow-col items-center ">
     
     <p className='text-black font bold'>বাজার দর — প্রয়োজনীয় পণ্যের দাম এক নজরে।</p>
   </aside>
@@ -19,3 +19,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+
