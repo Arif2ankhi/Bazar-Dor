@@ -4,14 +4,15 @@ import React from "react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { authClient } from "@/lib/auth-client";
+// import { authClient } from "@/lib/auth-client";
 import toast from "react-hot-toast";
 import { redirect } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
+// import { authClient } from "@/lib/auth-client";
 
 const SignUpPage = () => {
 
   const onSubmit = async (e)=> {
-    const userName = user?.name || "User";
     e.preventDefault()
 
      const formData = new FormData(e.target);
@@ -32,14 +33,14 @@ const SignUpPage = () => {
 
     if (error) {
       toast.error(error.message );
-      console.log(error)
+      // console.log(error)
     }
   };
 
   // {Google -Sign in }
 
   const handleGoogleSignIn = async () => {
-    const { data, error } = await authClient.signIn.social({
+    const { data } = await authClient.signIn.social({
       provider: "google",
       callbackURL: "/", 
     });
@@ -51,6 +52,26 @@ const SignUpPage = () => {
 
     if (error) {
       toast.error("Google sign in failed");
+      console.log(error);
+    }
+  };
+
+
+   // {GitHub -Sign in }
+
+  const handleGitHubSignIn = async () => {
+    const { data, error } = await authClient.signIn.social({
+      provider: "github",
+      callbackURL: "/", 
+    });
+
+    if (data) {
+      toast.success("User signed in successfully");
+      console.log(data);cd
+    }
+
+    if (error) {
+      toast.error("GitHub sign in failed");
       console.log(error);
     }
   };
@@ -167,7 +188,7 @@ const SignUpPage = () => {
           </button>
 
           {/* GitHub */}
-          <button 
+          <button onClick={handleGitHubSignIn}
             type="button"
             className="h-9 px-2 flex items-center justify-center gap-2 border border-[#DCE3DF] rounded-md bg-white hover:bg-gray-50 text-[11px] font-medium text-gray-700 transition"
           >

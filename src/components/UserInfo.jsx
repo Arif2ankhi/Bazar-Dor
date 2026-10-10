@@ -1,5 +1,6 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
+// import { authClient } from "@/lib/auth-client";
 
 import Link from "next/link";
 import React from "react";
@@ -33,7 +34,7 @@ const handleSignout = async () => {
     <div>
       {user ? (
         <div className="flex flex-col items-center gap-2">
-          avatar image
+          {/* avatar image */}
           {/* <Link href={"/profile"}> */}
             <div className="avatar">
               <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring-2 ring-offset-2">

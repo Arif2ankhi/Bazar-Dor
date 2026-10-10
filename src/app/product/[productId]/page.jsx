@@ -11,8 +11,16 @@ const ProductDetails = async ({ params }) => {
   const { productId } = await params;
 
   const res = await fetch(
-    `https://api.api-store.workers.dev/api/bazardor/products/${productId}`,
+    // `https://api.api-store.workers.dev/api/bazardor/products/${productId}`,
+
     // `https://api.abcz.workers.dev/api/bazardor/products/${productId}`,
+
+// {3rd api}
+// `https://api-store-indol.vercel.app/api/bazardor/products/${productId}`,
+// {4th api}
+`https://openapi.programming-hero.com/api/bazardor/products/${productId}`,
+
+
     // { next: { revalidate: 60 } }
   );
 

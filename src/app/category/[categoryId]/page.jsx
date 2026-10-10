@@ -5,10 +5,15 @@ const { categoryId } = await params;
 
 const res = await fetch(
     // {real api}
-`https://api.api-store.workers.dev/api/bazardor/products?category=${encodeURIComponent(categoryId)}`
+// `https://api.api-store.workers.dev/api/bazardor/products?category=${encodeURIComponent(categoryId)}`
 
 // {Alternative API}
 // `https://api.abcz.workers.dev/api/bazardor/products?category=${encodeURIComponent(categoryId)}`
+
+// {3rd api}
+// `https://api-store-indol.vercel.app/api/bazardor/products?category=${encodeURIComponent(categoryId)}`
+// {4th api}
+`https://openapi.programming-hero.com/api/bazardor/products?category=${encodeURIComponent(categoryId)}`
 );
 
 if (!res.ok) {

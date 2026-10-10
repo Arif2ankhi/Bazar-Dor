@@ -7,12 +7,7 @@ const Banner = () => {
     dateStyle: "full"
   });
 
-  //    const handleScrollToAllProducts = () => {
-  //     const section = document.getElementById("all-products");
-  //     if (section) {
-  //       section.scrollIntoView({ behavior: "smooth" });
-  //     }
-  //   };
+
 
   return (
     <section className="container mx-auto px-4 py-6 md:px-8">

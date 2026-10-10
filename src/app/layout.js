@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
-import { Toaster } from "react-hot-toast";
+import {  Toaster } from "react-hot-toast";
 
 const notoSerifBengali = Noto_Serif_Bengali({
   subsets: ["latin","bengali"],
@@ -21,11 +21,11 @@ export default function RootLayout({ children }) {
       className={`${notoSerifBengali.className}  h-full antialiased`}
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col">
-        <Header></Header>
+        <Header/>
         <Marquee/>
         {children}
         <Footer/>
-        <Toaster />
+        <Toaster/>
         </body>
     </html>
   );

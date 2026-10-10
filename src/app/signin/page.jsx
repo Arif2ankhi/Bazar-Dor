@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
+// import { authClient } from "@/lib/auth-client";
 
 const SignInPage = () => {
   const onSubmit = async (e) => {
@@ -49,12 +50,28 @@ const SignInPage = () => {
     }
   };
 
-  //  const handleGoogleSignIn = async () => {
-  //   await authClient.signIn.social({
-  //     provider: "google"
-  //   });
-  //   console.log(data);
-  // };
+
+   // {GitHub -Sign in }
+
+  const handleGitHubSignIn = async () => {
+    const { data, error } = await authClient.signIn.social({
+      provider: "github",
+      callbackURL: "/", 
+    });
+
+    if (data) {
+      toast.success("User signed in successfully");
+      console.log(data);
+    }
+
+    if (error) {
+      toast.error("GitHub sign in failed");
+      console.log(error);
+    }
+  };
+
+
+
 
   return (
     <div className="min-h-screen bg-[#F5FAF7] flex flex-col items-center  px-4 py-8">
@@ -129,7 +146,7 @@ const SignInPage = () => {
           </button>
 
           {/* GitHub */}
-          <button
+          <button onClick={handleGitHubSignIn}
             type="button"
             className="h-9 px-2 flex items-center justify-center gap-2 border border-[#DCE3DF] rounded-md bg-white hover:bg-gray-50 text-[11px] font-medium text-gray-700 transition"
           >

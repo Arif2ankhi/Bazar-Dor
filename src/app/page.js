@@ -1,3 +1,10 @@
+
+
+// import AllProducts from "@/components/AllProducts";
+// import Banner from "@/components/Banner";
+// import PriceDown from "@/components/PriceDown";
+// import PriceUp from "@/components/PriceUp";
+
 import AllProducts from "@/components/AllProducts";
 import Banner from "@/components/Banner";
 import PriceDown from "@/components/PriceDown";
@@ -5,12 +12,17 @@ import PriceUp from "@/components/PriceUp";
 
 
 
+
+
+
 export default async function Home() {
 
   // {Original API}
-  const res = await fetch('https://api.api-store.workers.dev/api/bazardor/products')
+  // const res = await fetch('https://api.api-store.workers.dev/api/bazardor/products')
   // {Alternative Api}
   // const res = await fetch('https://api.abcz.workers.dev/api/bazardor/products')
+  // {3rd alternatives}
+  const res = await fetch('https://api-store-indol.vercel.app/api/bazardor/products')
   const data = await res.json()
   const products = data
   
@@ -22,7 +34,7 @@ export default async function Home() {
     <main className="min-h-screen bg-[#F7F9F8] py-6">
       <div className="container mx-auto px-4 md:px-8">
         {/* Hero Banner */}
-        <Banner />
+        <Banner/>
 
         {/* Price Increased Section */}
         <PriceUp products={products} />
