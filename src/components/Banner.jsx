@@ -41,7 +41,7 @@ const Banner = () => {
 
           <div className="relative flex items-center justify-center">
             <Image
-              className="object-contain "
+              className="object-contain width-auto height-auto "
               src="/bazar-hero.png"
               alt="বাজারের পণ্য"
               width={420}
