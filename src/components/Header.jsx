@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import NavLinks from "./NavLinks";
+import UserInfo from "./UserInfo";
 
 const Header = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
@@ -8,8 +9,9 @@ const Header = () => {
   });
 
   return (
-    <header className=" bg-slate-100 w-full py-2 px-4 sm:px-6 ">
-      <div className="max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
+    <header className="  bg-slate-100 w-full py-2 px-4 sm:px-6 ">
+      {/* <div className="max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0"> */}
+      <div className="max-w-10/12 mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
       
         <div className="flex items-center gap-2 sm:gap-3">
           <Image
@@ -30,16 +32,9 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Sign In / Sign Up Buttons */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          <button className="bg-green-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md text-xs sm:text-sm font-medium hover:bg-green-700 transition-colors">
-            সাইন ইন
-          </button>
-
-          <button className="bg-blue-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md text-xs sm:text-sm font-medium hover:bg-blue-600 transition-colors">
-            সাইন আপ
-          </button>
-        </div>
+        {/* Sign In / Sign Up Buttons use another components Userinfo imported here */}
+        
+        <UserInfo/>
       </div>
       <NavLinks/>
     </header>

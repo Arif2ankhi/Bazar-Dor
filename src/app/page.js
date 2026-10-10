@@ -34,28 +34,6 @@ export default async function Home() {
         <AllProducts products={products} />
       </div>
     </main>
-
-  //  <div>
-  //   <Banner/>
-  // {/* {price up and price down seection } */}
-  //   <div>
-  //   <PriceUp/>
-  //   </div>
-
-  //   <div>
-  //   <PriceDown/>
-  //   </div>
-    
-    
-
-  //   <div>
-  //     {
-  //       // products.map(product => )
-  //     }
-  //   </div>
-    
-  //  </div>
-  // );
   );
 }
 

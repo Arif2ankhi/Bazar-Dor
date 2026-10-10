@@ -6,10 +6,12 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { authClient } from "@/lib/auth-client";
 import toast from "react-hot-toast";
+import { redirect } from "next/navigation";
 
 const SignUpPage = () => {
 
   const onSubmit = async (e)=> {
+    const userName = user?.name || "User";
     e.preventDefault()
 
      const formData = new FormData(e.target);
@@ -34,7 +36,24 @@ const SignUpPage = () => {
     }
   };
 
+  // {Google -Sign in }
 
+  const handleGoogleSignIn = async () => {
+    const { data, error } = await authClient.signIn.social({
+      provider: "google",
+      callbackURL: "/", 
+    });
+
+    if (data) {
+      toast.success("User signed in successfully");
+      console.log(data);
+    }
+
+    if (error) {
+      toast.error("Google sign in failed");
+      console.log(error);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#F5FAF7] flex flex-col items-center justify-center px-4 py-8">
@@ -136,7 +155,7 @@ const SignUpPage = () => {
         <div className="grid grid-cols-2 gap-2">
 
           {/* Google */}
-          <button
+          <button onClick={handleGoogleSignIn}
             type="button"
             className="h-9 px-2 flex items-center justify-center gap-2 border border-[#DCE3DF] rounded-md bg-white hover:bg-gray-50 text-[11px] font-medium text-gray-700 transition"
           >
@@ -148,7 +167,7 @@ const SignUpPage = () => {
           </button>
 
           {/* GitHub */}
-          <button
+          <button 
             type="button"
             className="h-9 px-2 flex items-center justify-center gap-2 border border-[#DCE3DF] rounded-md bg-white hover:bg-gray-50 text-[11px] font-medium text-gray-700 transition"
           >
@@ -166,7 +185,7 @@ const SignUpPage = () => {
           অ্যাকাউন্ট আছে?{" "}
 
           <a
-            href="/login"
+            href="/signin"
             className="text-[#079447] font-medium hover:underline"
           >
             সাইন ইন করুন

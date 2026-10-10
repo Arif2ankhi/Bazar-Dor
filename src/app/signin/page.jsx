@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
@@ -6,12 +7,11 @@ import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
 
 const SignInPage = () => {
-    const onSubmit = async (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    // const formData = new Formdata(e.target)
-    const user = Object.fromEntries(formData.entries()) 
+    const user = Object.fromEntries(formData.entries());
 
     console.log(user);
 
@@ -30,7 +30,31 @@ const SignInPage = () => {
     }
   };
 
+  // {Google -Sign in }
 
+  const handleGoogleSignIn = async () => {
+    const { data, error } = await authClient.signIn.social({
+      provider: "google",
+      callbackURL: "/", 
+    });
+
+    if (data) {
+      toast.success("User signed in successfully");
+      console.log(data);
+    }
+
+    if (error) {
+      toast.error("Google sign in failed");
+      console.log(error);
+    }
+  };
+
+  //  const handleGoogleSignIn = async () => {
+  //   await authClient.signIn.social({
+  //     provider: "google"
+  //   });
+  //   console.log(data);
+  // };
 
   return (
     <div className="min-h-screen bg-[#F5FAF7] flex flex-col items-center  px-4 py-8">
@@ -95,7 +119,7 @@ const SignInPage = () => {
         {/* Social Login */}
         <div className="grid grid-cols-2 gap-2">
           {/* Google */}
-          <button
+          <button onClick={handleGoogleSignIn}
             type="button"
             className="h-9 px-2 flex items-center justify-center gap-2 border border-[#DCE3DF] rounded-md bg-white hover:bg-gray-50 text-[11px] font-medium text-gray-700 transition"
           >
@@ -119,7 +143,7 @@ const SignInPage = () => {
         <p className="text-center text-[11px] text-gray-500 mt-4">
           অ্যাকাউন্ট নেই ?{" "}
           <a
-            href="/login"
+            href="/signup"
             className="text-[#079447] font-medium hover:underline"
           >
             সাইন আপ
