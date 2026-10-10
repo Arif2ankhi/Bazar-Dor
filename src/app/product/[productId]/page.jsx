@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 
-
 const toBn = (num) => {
   if (num === undefined || num === null) return '';
   return Number(num).toLocaleString('bn-BD');
@@ -21,7 +20,6 @@ const ProductDetails = async ({ params }) => {
 `https://openapi.programming-hero.com/api/bazardor/products/${productId}`,
 
 
-    // { next: { revalidate: 60 } }
   );
 
   if (!res.ok) {
@@ -41,7 +39,7 @@ const ProductDetails = async ({ params }) => {
     markets = [],
   } = product;
 
-  // সর্বনিম্ন ও সর্বাধিক দাম হিসাব
+  // Minimum and maximum price in different market
   const allMinPrices = markets.map((m) => m.min);
   const allMaxPrices = markets.map((m) => m.max);
   const minPrice = allMinPrices.length ? Math.min(...allMinPrices) : today;

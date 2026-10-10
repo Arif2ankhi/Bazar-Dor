@@ -26,9 +26,6 @@ export default async function Home() {
   const data = await res.json()
   const products = data
   
-//  console.log(products);
- 
-
 
   return (
     <main className="min-h-screen bg-[#F7F9F8] py-6">

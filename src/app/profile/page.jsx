@@ -1,7 +1,6 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import React, { useState } from "react";
-// import Link from "next/link";
 import toast from "react-hot-toast";
 
 const ProfilePage = () => {

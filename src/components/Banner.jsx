@@ -7,8 +7,6 @@ const Banner = () => {
     dateStyle: "full"
   });
 
-
-
   return (
     <section className="container mx-auto px-4 py-6 md:px-8">
       <div className="overflow-hidden rounded-3xl bg-[#F2F5F3] p-8 shadow-sm md:p-12">
